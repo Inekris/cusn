@@ -6,8 +6,6 @@ class ContentUnwantedScraper
     private $functional_options;
     private $htaccess_options;
     
-    
-
     public function __construct()
     {
         add_action( 'admin_menu', array( $this, 'add_plugin_page' ) );
