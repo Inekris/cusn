@@ -14,7 +14,7 @@ class ContentUnwantedScraper
         add_action( 'admin_init', array( $this, 'page_init' ) );
         $this->functional_options = get_option( 'cusn-functional-settings' );
         $this->htaccess_options = get_option( 'cusn-htaccess-settings' );
-        load_textdomain( 'cusn', dirname( plugin_basename( __FILE__ ) ) .'/languages/' );
+        load_plugin_textdomain( 'cusn', false, dirname( plugin_basename( __FILE__ ) ) .'/languages/' );
 
     }
    
