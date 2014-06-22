@@ -669,7 +669,3 @@ class ContentUnwantedScraper
 		
 	
 }
-
-require_once( ABSPATH . WPINC . '/pluggable.php' );
-if( is_admin() && current_user_can( 'manage_options' ) )
-    $my_settings_page = new ContentUnwantedScraper();

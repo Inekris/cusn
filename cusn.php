@@ -25,6 +25,7 @@
  */
 
 require_once( 'cusnsettings.php' );
+require_once( ABSPATH . WPINC . '/pluggable.php' );
 
 //if ( ! $cusn_functional_options or ! $cusn_htaccess_options ) return; //Not all needed options are available
 //error_log("Plugin loaded!!!!");
@@ -166,4 +167,8 @@ function cusn_cleanup( $type = 'uninstall' ) {
 
 }
 add_action( 'cusn-alert', 'cusn_insert_line' );
+
+
+if( is_admin() && current_user_can( 'manage_options' ) )
+    $my_settings_page = new ContentUnwantedScraper();
 ?>
