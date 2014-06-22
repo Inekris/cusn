@@ -1,0 +1,32 @@
+textarea {
+	width: 25em;
+	min-height: 100px;
+	border: #ddd 1px solid;
+}
+
+.form-table td {
+	padding: 20px 10px 20px 0;
+}
+.cusn-alert {
+	margin: 18px;
+}
+
+.cusn-warning {
+	color: red;
+	background-color: rgba(255,204,204,0.77);
+	border: 2px solid red;
+	margin: 2px;
+	padding: 5px;
+	border-radius: 5px;
+}
+
+select.cusn-select-box {
+	width: 250px;
+	height: 100px;
+}
+
+.cusn-section-hr {
+	color: #f00;
+	background-color: #f00;
+	height: 5px;
+}

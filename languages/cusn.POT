@@ -1,0 +1,238 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: Content Unwanted Scraper\n"
+"POT-Creation-Date: 2014-06-15 20:57+0100\n"
+"PO-Revision-Date: 2014-06-15 20:58+0100\n"
+"Last-Translator: Jasper Kips <jasper@planetkips.nl>\n"
+"Language-Team: Inekris <jasper@planetkips.nl>\n"
+"Language: nl\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Poedit 1.6.5\n"
+"X-Poedit-Basepath: .\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"X-Poedit-KeywordsList: __;_e\n"
+"X-Poedit-SourceCharset: UTF-8\n"
+"X-Poedit-SearchPath-0: /Users/jasper/Documents/Websites/ontwikkel/wp-content/"
+"plugins/content-unwanted-scraper\n"
+
+#: /Users/jasper/Documents/Websites/ontwikkel/wp-content/plugins/content-unwanted-scraper/cusnsettings.php:42
+msgid "Content Unwanted Scraper Options"
+msgstr "Content Unwanted Scraper Instellingen"
+
+#: /Users/jasper/Documents/Websites/ontwikkel/wp-content/plugins/content-unwanted-scraper/cusnsettings.php:80
+msgid "General and Frontend settings"
+msgstr "Algemene en website instellingen"
+
+#: /Users/jasper/Documents/Websites/ontwikkel/wp-content/plugins/content-unwanted-scraper/cusnsettings.php:86
+msgid "Settings for .htaccess"
+msgstr "Instellingen voor .htaccess"
+
+#: /Users/jasper/Documents/Websites/ontwikkel/wp-content/plugins/content-unwanted-scraper/cusnsettings.php:93
+msgid "Help"
+msgstr "Help"
+
+#: /Users/jasper/Documents/Websites/ontwikkel/wp-content/plugins/content-unwanted-scraper/cusnsettings.php:101
+msgid "Remove settings on deactivate"
+msgstr "Verwijder instellingen bij het deactiveren van de plugin"
+
+#: /Users/jasper/Documents/Websites/ontwikkel/wp-content/plugins/content-unwanted-scraper/cusnsettings.php:110
+msgid "Remove backups of .htaccess when plugin is removed"
+msgstr "Verwij backups van .htaccess, als de plugin wordt verwijderd"
+
+#: /Users/jasper/Documents/Websites/ontwikkel/wp-content/plugins/content-unwanted-scraper/cusnsettings.php:119
+msgid "Text to show when unwanted content scraper UA is detected"
+msgstr "Toon deze tekst als een ongewilde scraper UA wordt herkend"
+
+#: /Users/jasper/Documents/Websites/ontwikkel/wp-content/plugins/content-unwanted-scraper/cusnsettings.php:128
+msgid "Show the article after the notice"
+msgstr "Toon de blog na de mededeling over ongewild scrapen"
+
+#: /Users/jasper/Documents/Websites/ontwikkel/wp-content/plugins/content-unwanted-scraper/cusnsettings.php:137
+msgid ""
+"Name of the httpd environment variable for showing the content you set above"
+msgstr ""
+"Naam van de httpd (Apache) omgevings variabele om te bepalen of de tekst "
+"getoond moet worden"
+
+#: /Users/jasper/Documents/Websites/ontwikkel/wp-content/plugins/content-unwanted-scraper/cusnsettings.php:146
+msgid "Apache condition when to add environment variable"
+msgstr "Apache (httpd) regel voor het toevoegen van de omgevingsvariabele"
+
+#: /Users/jasper/Documents/Websites/ontwikkel/wp-content/plugins/content-unwanted-scraper/cusnsettings.php:155
+msgid "Currently known scrapers"
+msgstr "Bekende scrapers die de medeling krijgen"
+
+#: /Users/jasper/Documents/Websites/ontwikkel/wp-content/plugins/content-unwanted-scraper/cusnsettings.php:226
+msgid "The value given was invalid. Reverting to default"
+msgstr "De opgegeven waarde is ongeldig. De standaard waarde wordt gebruikt"
+
+#: /Users/jasper/Documents/Websites/ontwikkel/wp-content/plugins/content-unwanted-scraper/cusnsettings.php:232
+#: /Users/jasper/Documents/Websites/ontwikkel/wp-content/plugins/content-unwanted-scraper/cusnsettings.php:271
+msgid ""
+"Couldn't read or write to the neccesary files or directories. You .htaccess "
+"SHOULD be untouched"
+msgstr ""
+"Kan de noodzakelijke bestanden of directories niet schrijven. Het .htaccess "
+"bestan ZOU ongemoeid moeten zijn"
+
+#: /Users/jasper/Documents/Websites/ontwikkel/wp-content/plugins/content-unwanted-scraper/cusnsettings.php:255
+msgid "The address given is not a valid ip adress"
+msgstr "Het opgegeven adres is geen geldig IP adres"
+
+#: /Users/jasper/Documents/Websites/ontwikkel/wp-content/plugins/content-unwanted-scraper/cusnsettings.php:304
+msgid ""
+"This will change your .htaccess file. The author has taken every precaution "
+"to make sure the plugin doesn't interfere with your normal WordPress "
+"operation."
+msgstr ""
+"Dit wijzigt het .htaccess bestand. Alle voorzorgsmaatregelen zijn genomen om "
+"er voor te zorgen dat de werking van WordPress niet negatief wordt beinvloed."
+
+#: /Users/jasper/Documents/Websites/ontwikkel/wp-content/plugins/content-unwanted-scraper/cusnsettings.php:306
+msgid ""
+"However, no guarantee is given. To be safe, the plugin creates a backup in "
+"the wp-content/cusn-backup directory in your WordPress root directory"
+msgstr ""
+"Er wordt echter geen garantie gegeven. Om zo veilig mogelijk te kunnen "
+"werken, wordt een backup van het huidige .htaccess bestand gemaakt in de "
+"directory 'wp-content/cusn-backup'."
+
+#: /Users/jasper/Documents/Websites/ontwikkel/wp-content/plugins/content-unwanted-scraper/cusnsettings.php:309
+msgid ""
+"You can't write the .htaccess file, and/or the backup files. Saving the "
+"options doesn't make sense"
+msgstr ""
+"Schrijven naar het .htaccess bestand, en/of de backup directory is niet "
+"mogelijk. Het bewaren van de gewijzigde instellingen heeft geen nut."
+
+#: /Users/jasper/Documents/Websites/ontwikkel/wp-content/plugins/content-unwanted-scraper/cusnsettings.php:322
+msgid "Click for the manual"
+msgstr "Klik voor de handleiding"
+
+#: /Users/jasper/Documents/Websites/ontwikkel/wp-content/plugins/content-unwanted-scraper/cusnsettings.php:342
+#, php-format
+msgid ""
+"If the server environment variable %s is set for a match (in) with the User-"
+"Agent, or an ip address of the remote client, then the notice will be "
+"displayed."
+msgstr ""
+"Als de server omgevingsvariabele %s is ingesteld, en er is een overeenkomst "
+"met (een deel van) de UA, of het IP adres, dan wordt de tekst getoond"
+
+#: /Users/jasper/Documents/Websites/ontwikkel/wp-content/plugins/content-unwanted-scraper/cusnsettings.php:344
+msgid "You can use the following html tags:"
+msgstr "DE volgende HTML tags kunnen worden gebruikt:"
+
+#: /Users/jasper/Documents/Websites/ontwikkel/wp-content/plugins/content-unwanted-scraper/cusnsettings.php:345
+msgid "Defaults to empty string"
+msgstr "Standaard leeg"
+
+#: /Users/jasper/Documents/Websites/ontwikkel/wp-content/plugins/content-unwanted-scraper/cusnsettings.php:379
+msgid "Set variable name"
+msgstr "Zet naam van variabele"
+
+#: /Users/jasper/Documents/Websites/ontwikkel/wp-content/plugins/content-unwanted-scraper/cusnsettings.php:382
+msgid ""
+"Needs to be lower case, and only contain letter from the latin alphabet, ie. "
+"a-z. No spaces, no numbers and no other characters"
+msgstr ""
+"In kleine letters, alleen in het alphabet. Geen spaties, geen cijfers en "
+"geen bijzondere karaters"
+
+#: /Users/jasper/Documents/Websites/ontwikkel/wp-content/plugins/content-unwanted-scraper/cusnsettings.php:384
+msgid ""
+"Uppercase is converted to lowercase. If the other constraints aren't met, "
+"the value will revert to the default (\"unwanted\")"
+msgstr ""
+"Hoofdletters worden omgezet naar kleine letters. Als de andere voorwaarden "
+"worden geschonden, wordt de waarde de standaard waarde (\"unwanted\")"
+
+#: /Users/jasper/Documents/Websites/ontwikkel/wp-content/plugins/content-unwanted-scraper/cusnsettings.php:386
+msgid "And I am too lazy to write a javascript check input script."
+msgstr ""
+"En ik ben te lui om een javascript te schrijven om de invoer te checken."
+
+#: /Users/jasper/Documents/Websites/ontwikkel/wp-content/plugins/content-unwanted-scraper/cusnsettings.php:388
+msgid ""
+"You need to click the 'Set variable name' button to actually change the value"
+msgstr "Klik de 'Zet naam van variabele' knop, om de waarde te wijzigen"
+
+#: /Users/jasper/Documents/Websites/ontwikkel/wp-content/plugins/content-unwanted-scraper/cusnsettings.php:396
+msgid "User Agent String"
+msgstr "User Agent String"
+
+#: /Users/jasper/Documents/Websites/ontwikkel/wp-content/plugins/content-unwanted-scraper/cusnsettings.php:397
+msgid "IP address"
+msgstr "IP Adres"
+
+#: /Users/jasper/Documents/Websites/ontwikkel/wp-content/plugins/content-unwanted-scraper/cusnsettings.php:400
+msgid "Add condition"
+msgstr "Voeg voorwaarde toe"
+
+#: /Users/jasper/Documents/Websites/ontwikkel/wp-content/plugins/content-unwanted-scraper/cusnsettings.php:403
+msgid ""
+"Select a condition type, IP address or User Agent String, and fill in a "
+"value."
+msgstr "Kies een type, IP Adres of User Agent String, en geef een waarde"
+
+#: /Users/jasper/Documents/Websites/ontwikkel/wp-content/plugins/content-unwanted-scraper/cusnsettings.php:405
+msgid "- a valid IP address (for the IP address type)"
+msgstr "- een geldig IP adres (voor het type IP Adres)"
+
+#: /Users/jasper/Documents/Websites/ontwikkel/wp-content/plugins/content-unwanted-scraper/cusnsettings.php:407
+msgid ""
+"- a (part of) the User Agent (browser name) string (for the User Agent "
+"String type) This is NOT case sensitive"
+msgstr ""
+"- een (deel van) de User Agent (browser naam) (voor het User Agent type). "
+"Niet hoofdletter gevoelig"
+
+#: /Users/jasper/Documents/Websites/ontwikkel/wp-content/plugins/content-unwanted-scraper/cusnsettings.php:409
+msgid "You need to use the button \"Add Condition\" to add the value."
+msgstr "Klik de \"Voeg voorwaarde toe\" knop, om de waarde toe te voegen"
+
+#: /Users/jasper/Documents/Websites/ontwikkel/wp-content/plugins/content-unwanted-scraper/cusnsettings.php:434
+msgid ""
+"When deactivating the plugin, remove the plugin settings as well. Defaults "
+"to 'No'"
+msgstr ""
+"Verwijder de instellingen bij  het deactiveren van de plugin. Standaard 'Nee'"
+
+#: /Users/jasper/Documents/Websites/ontwikkel/wp-content/plugins/content-unwanted-scraper/cusnsettings.php:436
+msgid "The settings will always be removed when uninstalling"
+msgstr ""
+"De instellingen worden altijd verwijderd als de plugin wordt gedeinstallerd"
+
+#: /Users/jasper/Documents/Websites/ontwikkel/wp-content/plugins/content-unwanted-scraper/cusnsettings.php:440
+msgid ""
+"When removing the setting (either through uninstalling, or when 'Remove "
+"settings on deactivate' is checked, remove the .htaccess backups as well"
+msgstr ""
+"Bij het verwijderen van de instellingen, hetzij bij het deinstalleren of als "
+"'Verwijder instellingen bij het deactiveren van de plugin' ook bij het "
+"deactiveren, ook de backups van .htaccess verwijderen."
+
+#: /Users/jasper/Documents/Websites/ontwikkel/wp-content/plugins/content-unwanted-scraper/cusnsettings.php:442
+msgid "Defaults to 'Yes'"
+msgstr "Standaard is 'Ja'"
+
+#: /Users/jasper/Documents/Websites/ontwikkel/wp-content/plugins/content-unwanted-scraper/cusnsettings.php:445
+msgid "Show the post, or page, after the notice. Defaults to 'No' "
+msgstr "Toon de pagina, of het artikel, na de tekst. Standaard 'Nee'"
+
+#: /Users/jasper/Documents/Websites/ontwikkel/wp-content/plugins/content-unwanted-scraper/cusnsettings.php:484
+msgid "None"
+msgstr "Geen"
+
+#: /Users/jasper/Documents/Websites/ontwikkel/wp-content/plugins/content-unwanted-scraper/cusnsettings.php:492
+msgid "Remove selected"
+msgstr "Veriwjder geselecteerde"
+
+#: /Users/jasper/Documents/Websites/ontwikkel/wp-content/plugins/content-unwanted-scraper/cusnsettings.php:494
+msgid ""
+"You need to click the button 'Remove Selected' to actually remove the "
+"selected item"
+msgstr ""
+"Klik de 'Verwijder geselecteerde', om de geselcteerde regel te verwijderen"
