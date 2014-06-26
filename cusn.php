@@ -20,7 +20,7 @@
  Plugin URI: http://tech.planetkips.nl/content-unwanted-scraper-notice/
  Description: Inserts content at the top of the page to advise of content theft
  Author: Inekris
- Version: 1.0
+ Version: 1.1
  Author URI: http://inekris.xs4all.nl/jasper-kips/
  */
 
