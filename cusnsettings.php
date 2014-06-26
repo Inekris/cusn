@@ -608,6 +608,9 @@ class ContentUnwantedScraper
 		if ( is_array( $htaccess_entries ) ) {
 			$cusn_out_string = '# BEGIN cusn' . "\n";
 			$cusn_add_block = false;
+			$cusn_out_string .= "<Directory $cusn_backup_dir >\n";
+			$cusn_out_string .= "\tOrder Deny,Allow\n\tDeny from All\n";
+			$cusn_out_string .= "</Directory>\n\n";
 			foreach ( $htaccess_entries as $an_entry ) {
 				$an_exploded_entry = explode("&", $an_entry );
 				
