@@ -66,7 +66,7 @@ class ContentUnwantedScraper
 
     public function page_init()
     {        
-    	wp_register_style( 'cusn_style_sheet', plugins_url( 'css/cusn.css', __FILE__ ) );
+    	wp_register_style( 'cusn_style_sheet', plugins_url( 'css/cusn.css', dirname( __FILE__ ) ) );
         register_setting(
             'cusn-functional-settings', // Option group
             'cusn-functional-settings', // Option name
@@ -185,7 +185,7 @@ class ContentUnwantedScraper
     public function cusn_functional_sanitize( $input )
     {
         $new_input = array();
-        $new_input['cusn-content-to-add'] = '';
+        $new_input['cusn-content-to-add'] = __( 'Based on analysis, you are an unwanted scraper', 'cusn' );
         if( is_array( $this->functional_options ) && array_key_exists( 'cusn-content-to-add', $this->functional_options ) ) $new_input['cusn-content-to-add'] = $this->functional_options['cusn-content-to-add'];
         $this->cusn_set_checkboxes( $new_input );
         foreach ( $input as $option_key => $option_value ) {
@@ -197,6 +197,7 @@ class ContentUnwantedScraper
 			        else {
 			        	$tmp_string = wp_kses_data( $option_value );
 			        	$tmp_string = wp_rel_nofollow( $tmp_string );
+			        	$tmp_string = trim( $tmp_string );
 			        	if ( substr_count( $tmp_string, 'target="_blank"' ) == 0 ) $tmp_string = str_ireplace('<a ', '<a target="_blank" ', $tmp_string );
 			        	$new_input[$option_key] = $tmp_string;
 		        	}
@@ -338,7 +339,10 @@ class ContentUnwantedScraper
 	    	<?php
 	    	$text_to_add = "";
 	    	$cusn_stop_word = "unwanted";
-	    	if ( is_array( $this->functional_options ) && array_key_exists('cusn-content-to-add', $this->functional_options ) ) $text_to_add = stripslashes( $this->functional_options['cusn-content-to-add'] );
+	    	if ( is_array( $this->functional_options ) && array_key_exists('cusn-content-to-add', $this->functional_options ) ) {
+	    		$text_to_add = stripslashes( $this->functional_options['cusn-content-to-add'] );
+	    		if ( 0 === strlen( $text_to_add ) ) $text_to_add = __( 'Based on analysis, you are an unwanted scraper', 'cusn' );
+	    		}
 	    	?>
 	    	<textarea name="cusn-functional-settings[<?php echo $args['setting']; ?>]" class="cusn-textarea"><?php echo $text_to_add; ?></textarea>
 	    	<?php if ( 'cusn-content-to-add' == $args['setting'] ) {

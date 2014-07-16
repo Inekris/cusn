@@ -24,15 +24,12 @@
  Author URI: http://inekris.xs4all.nl/jasper-kips/
  */
 
-require_once( 'cusnsettings.php' );
-require_once( ABSPATH . WPINC . '/pluggable.php' );
 
-//if ( ! $cusn_functional_options or ! $cusn_htaccess_options ) return; //Not all needed options are available
-//error_log("Plugin loaded!!!!");
-register_uninstall_hook( __FILE__, 'cusn_uninstall' );
-register_deactivation_hook( __FILE__, 'cusn_deactivate');
-register_activation_hook( __FILE__, 'cusn_install' );
-
+//register_uninstall_hook( __FILE__, 'cusn_uninstall' );
+/*register_deactivation_hook( __FILE__, 'cusn_deactivate');
+*/
+//register_activation_hook( __FILE__, 'cusn_install' );
+add_action( 'cusn-alert', 'cusn_insert_line' );
 function cusn_insert_line( $query ) {
 	$cusn_functional_options = get_option( 'cusn-functional-settings' );
 	if ( ! cusn_check_condition () ) return;
@@ -51,29 +48,47 @@ function cusn_insert_line( $query ) {
 }
 
 function cusn_check_condition () {
-	$cusn_htaccess_options = get_option( 'cusn-htaccess-settings' );
+	if ( is_multisite() ) {
+		$cusn_htaccess_options = get_site_option( 'cusn_site_htaccess_options' );
+	}
+	else {
+		$cusn_htaccess_options = get_option( 'cusn-htaccess-settings' );
+	}
 	if ( is_array( $cusn_htaccess_options ) && array_key_exists( 'cusn-stop-word', $cusn_htaccess_options ) ) {
 		$cusn_env_variable = $cusn_htaccess_options['cusn-stop-word'];
 		}
 	else {
 		return false;
 	}
+	$p=array_key_exists( $cusn_env_variable, $_SERVER );
 	return array_key_exists( $cusn_env_variable, $_SERVER );
 }
 
 function cusn_install() {
 	$cusn_functional_options = get_option( 'cusn-functional-settings' );
-	$cusn_htaccess_options = get_option( 'cusn-htaccess-settings' );
+	if ( is_multisite() ) {
+		$cusn_htaccess_options = get_site_option( 'cusn_site_htaccess_options' );
+		}
+	else {
+		$cusn_htaccess_options = get_option( 'cusn-htaccess-settings' );
+	}
 	if ( ! $cusn_functional_options ) $cusn_functional_options = array();
 	if ( ! $cusn_htaccess_options ) $cusn_htaccess_options = array();
 	// Set sensible defaults
-	$cusn_functional_options['cusn-remove-backups'] = "Y";
+	if ( ! is_multisite() ) $cusn_functional_options['cusn-remove-backups'] = "Y";
 	$cusn_htaccess_options['cusn-stop-word'] = "unwanted";
 	add_option( 'cusn-functional-settings', $cusn_functional_options );
-	add_option( 'cusn-htaccess-settings', $cusn_htaccess_options );
+	if ( ! is_multisite() ) {
+		add_option( 'cusn-htaccess-settings', $cusn_htaccess_options );
+	}
+	else {
+		add_site_option( 'cusn_site_htaccess_options', $cusn_htaccess_options );
+		
+	}
 }
 
 function cusn_uninstall() {
+	if ( is_multisite() ) return; //Needs to written, sometime
 	$cusn_options = get_option( 'cusn-functional-settings' );
 	$cusn_uninstall_type = 'remove';
 	if ( array_key_exists( 'cusn-remove-backups', $cusn_options ) && $cusn_options['cusn-remove-backups'] == "Y" ) $cusn_uninstall_type = 'uninstall';
@@ -81,20 +96,20 @@ function cusn_uninstall() {
 }
 
 function cusn_deactivate() {
-	$cusn_options = get_option( 'cusn-functional-settings' );
-	$cusn_deactivate_type = 'none';
-	$o=print_r($cusn_options,true);error_log($o);
-	if ( is_array( $cusn_options ) && array_key_exists( 'cusn-remove-settings-on-deactivate' , $cusn_options ) && $cusn_options['cusn-remove-settings-on-deactivate'] == "Y" ) {
-		$cusn_deactivate_type = 'deactivate';
-		if ( array_key_exists( 'cusn-remove-backups', $cusn_options ) && $cusn_options['cusn-remove-backups'] == "Y" ) $cusn_deactivate_type = 'uninstall';
+	if ( ! is_multisite() ) {
+		$cusn_options = get_option( 'cusn-functional-settings' );
+		$cusn_deactivate_type = 'none';
+		if ( is_array( $cusn_options ) && array_key_exists( 'cusn-remove-settings-on-deactivate' , $cusn_options ) && $cusn_options['cusn-remove-settings-on-deactivate'] == "Y" ) {
+			$cusn_deactivate_type = 'deactivate';
+			if ( array_key_exists( 'cusn-remove-backups', $cusn_options ) && $cusn_options['cusn-remove-backups'] == "Y" ) $cusn_deactivate_type = 'uninstall';
+		}
+		cusn_cleanup( $cusn_deactivate_type );
 	}
-	cusn_cleanup( $cusn_deactivate_type );
 }
 
 function cusn_cleanup( $type = 'uninstall' ) {
 	if( 'none' == $type ) return;
 //	$cusn_options = get_option( 'cusn-functional-settings' );
-	error_log( $type );
 	// Remove .htaccess entries
 	$cusn_root = get_home_path();
 	if ( ! is_writable( $cusn_root ) ) {
@@ -163,12 +178,25 @@ function cusn_cleanup( $type = 'uninstall' ) {
 
 // Remove options
 	delete_option( 'cusn-functional-settings' );
-	delete_option( 'cusn-htaccess-settings' );
+	if ( ! is_multisite() ) 
+		delete_option( 'cusn-htaccess-settings' );
 
 }
-add_action( 'cusn-alert', 'cusn_insert_line' );
 
 
-if( is_admin() && current_user_can( 'manage_options' ) )
+//if( is_admin() && current_user_can( 'manage_options' ) )
+if ( is_multisite() ) {
+	if ( is_admin() ) 
+		include_once('mutli/cusn-multi-site-backend.php');
+	if ( is_network_admin() )
+		include_once('mutli/cusn-network-backend.php');
+}
+else {
+	include_once( 'single/cusn-backend.php' );
+}
+if ( is_admin() )
     $my_settings_page = new ContentUnwantedScraper();
+
+if( is_network_admin() )
+	$my_settings_page = new ContentUnwantedScraperNetwork();
 ?>
