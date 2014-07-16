@@ -1,1 +1,1 @@
-See http://tech.planetkips.nl/2014/06/15/content-unwant…scraper-notice/ for instructions
+See http://tech.planetkips.nl/2014/06/22/content-unwant…scraper-notice/ for instructions
